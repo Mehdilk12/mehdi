@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %}Résultats{% endblock %}
+
+{% block content %}
+<h1>Résultats des Données Traitées</h1>
+<p>Choix de position du chiffre: <strong>{{ digit_choice }}</strong></p>
+{{ results | safe }}
+<a href="/">Retourner à la page principale</a>
+{% endblock %}

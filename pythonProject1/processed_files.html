@@ -1,0 +1,27 @@
+<!-- templates/processed_files.html -->
+{% extends "layout.html" %}
+
+{% block title %}Fichiers Traités{% endblock %}
+
+{% block content %}
+<h1>Données Traitées</h1>
+<table>
+    <tr>
+        <th>Nom du Fichier</th>
+        <th>Groupe</th>
+        <th>Chiffre</th>
+        <th>Variable</th>
+        <th>Montant</th>
+    </tr>
+    {% for row in processed_files %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/">Retour à la page principale</a>
+{% endblock %}

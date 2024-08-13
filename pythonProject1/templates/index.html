@@ -1,0 +1,27 @@
+<!-- templates/index.html -->
+{% extends "layout.html" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<h1>Charger un fichier Excel et choisir le type de variable</h1>
+<form action="/" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required><br><br>
+    Type de Variable: <select name="variable_type">
+        <option value="card">Card</option>
+        <option value="3digit">3 digit</option>
+        <option value="2digit">2 digit</option>
+        <option value="1digit">1 digit</option>
+        <option value="others">Others</option> <!-- Ajout de l'option "others" -->
+    </select><br><br>
+    Choisir la colonne pour 'Variable 1': <input type="text" name="variable_column" placeholder="Nom de la colonne" required><br><br>
+    Choisir la colonne pour 'Amount': <input type="text" name="amount_column" placeholder="Nom de la colonne" required><br><br>
+    Choisir le chiffre pour le groupe: <select name="digit_choice">
+        <option value="left">Chiffre à left</option>
+        <option value="right" selected>Chiffre à right</option>
+    </select><br><br>
+    <input type="submit" value="Charger et traiter">
+</form>
+
+<a href="/processed">Voir les fichiers déjà traités</a> <!-- Lien pour afficher les fichiers traités -->
+{% endblock %}

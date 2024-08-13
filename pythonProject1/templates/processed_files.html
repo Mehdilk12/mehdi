@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Données Traitées</h1>
+{% if all_tables_html %}
+    {% for file_id, html_snippet in all_tables_html %}
+        <div class="file-data">
+            <!-- Affichage du contenu HTML et du choix de chiffre pour chaque fichier -->
+            {{ html_snippet|safe }}
+            <form action="/delete/{{ file_id }}" method="post" style="display:inline;">
+                <button type="submit">Supprimer les données</button>
+            </form>
+        </div>
+        <hr class="separator">
+    {% endfor %}
+{% else %}
+    <p>Aucune donnée traitée disponible pour l'affichage.</p>
+{% endif %}
+<a href="/">Retour à la page principale</a>
+{% endblock %}

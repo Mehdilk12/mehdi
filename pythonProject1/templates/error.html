@@ -1,0 +1,10 @@
+<!-- templates/error.html -->
+{% extends "layout.html" %}
+
+{% block title %}Erreur{% endblock %}
+
+{% block content %}
+<h1>Erreur</h1>
+<p style="color: red;">{{ message }}</p>
+<a href="/">Retourner à la page principale</a>
+{% endblock %}
